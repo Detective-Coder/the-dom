@@ -171,16 +171,31 @@ function buildHtmlString(cohortObjectParameter){
   return htmlString;
 }
 
-let newHtmlString = buildHtmlString(cohort3);
-console.log(newHtmlString);
+let cohort1HTML = buildHtmlString(cohort1);
+let cohort2HTML = buildHtmlString(cohort2);
+let cohort3HTML = buildHtmlString(cohort2);
 
 function printHtmlString(htmlStringParameter, elementIdParameter){
   // YOUR CODE GOES HERE
+  document.querySelector(elementIdParameter).innerHTML = htmlStringParameter;
 }
-
+printHtmlString(cohort1HTML, "#cohort-one-container");
+printHtmlString(cohort2HTML, "#cohort-two-container");
+printHtmlString(cohort3HTML, "#cohort-three-container");
 // The buildHtmlString function should take a cohort object as a parameter and return an HTML string with the following elements:
 // An h1 of the cohort's name
 // An h3 for the start date
 // An h3 for the end date
 // An unordered list of instructors
 // An unordered list of technologies learned
+
+// The printHtmlString function should take two parameters:
+// An HTML string
+// The id of the element into which you want to print your HTML string
+// The printHtmlString function should do the following things:
+// Use document.querySelector to get a reference to the element in the DOM with whatever id you passed in.
+// Use innerHTML to print the HTML string you passed in to the DOM.
+// Call the buildHTMLString function and pass in cohort1 as an example.
+// Store the returned value in a new variable called cohort1HTML.
+// Call the printHtmlString function and pass in your cohort1HTML variable and the id of the element you want to print to ("cohort-one-container").
+// Repeat steps 6-8 for cohort2 and cohort3
