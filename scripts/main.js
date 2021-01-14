@@ -364,6 +364,10 @@ document.querySelector("#current-weather").innerHTML = htmlWeatherString;
 // Create another HTML string representing a three day forecast.
 let threeDayForecast = `<div class="forecast-day"><h3>${weatherData.query.results.channel.item.forecast[0].day}, ${weatherData.query.results.channel.item.forecast[0].date}</h3> <p>High of ${weatherData.query.results.channel.item.forecast[0].high} degrees</p> <p>Low of ${weatherData.query.results.channel.item.forecast[0].low} degrees</p> <p>We might see some ${weatherData.query.results.channel.item.forecast[0].text}</p></div>`;
 
+threeDayForecast += `<div class="forecast-day"><h3>${weatherData.query.results.channel.item.forecast[1].day}, ${weatherData.query.results.channel.item.forecast[1].date}</h3> <p>High of ${weatherData.query.results.channel.item.forecast[1].high} degrees</p> <p>Low of ${weatherData.query.results.channel.item.forecast[1].low} degrees</p> <p>We might see some ${weatherData.query.results.channel.item.forecast[0].text}</p></div>`;
+
+threeDayForecast += `<div class="forecast-day"><h3>${weatherData.query.results.channel.item.forecast[2].day}, ${weatherData.query.results.channel.item.forecast[2].date}</h3> <p>High of ${weatherData.query.results.channel.item.forecast[2].high} degrees</p> <p>Low of ${weatherData.query.results.channel.item.forecast[2].low} degrees</p> <p>It'll be ${weatherData.query.results.channel.item.forecast[2].text}</p></div>`;
+
 // Each day should have its own div with a class of forecast-day. Each div should have the following child elements:
 // An h3 element with the day of the week and the date (Example: "Thu, 06 Dec 2018")
 // A p element with the high temperature
